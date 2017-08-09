@@ -184,7 +184,7 @@ class Player(object):
 
             elif player.x <= 0: #### M O V E  L E F T #########
                 if currentScreen == bg1: ##stays in bg1
-                    player.x = 30
+                    player.x = 20
                     gameDisplay.fill((0,0,0))
                     gameDisplay.blit(bg1,(0,0))
                     currentScreen = bg1
@@ -193,7 +193,7 @@ class Player(object):
                     gameDisplay.fill((0,0,0))
                     gameDisplay.blit(bg2,(0,0))
                     currentScreen = bg2
-                    player.x = 30
+                    player.x = 20
 
                 elif currentScreen == bg3: ##move left to bg2
                     gameDisplay.fill((0,0,0))
@@ -205,7 +205,7 @@ class Player(object):
                     gameDisplay.fill((0,0,0))
                     gameDisplay.blit(bg4,(0,0))
                     currentScreen = bg4
-                    player.x = 30
+                    player.x = 20
 
                 elif currentScreen == bg5: ##move left to bg4
                     gameDisplay.fill((0,0,0))
@@ -218,7 +218,7 @@ class Player(object):
                     gameDisplay.fill((0,0,0))
                     gameDisplay.blit(bg6,(0,0))
                     currentScreen = bg6
-                    player.x = 30
+                    player.x = 20
 
                 elif currentScreen == bg7: ##move left to bg6
                     gameDisplay.fill((0,0,0))
@@ -230,7 +230,7 @@ class Player(object):
                     gameDisplay.fill((0,0,0))
                     gameDisplay.blit(bg8,(0,0))
                     currentScreen = bg8
-                    player.x = 30
+                    player.x = 20
 
             elif player.x >= 680: #### M O V E  R I G H T #########
                 if currentScreen == bg1: ##stays in bg1
@@ -352,15 +352,15 @@ class Rock(object):
     def __init__(self):
         self.image = pygame.image.load("rock.png")
         self.x = 518
-        self.y = 190
+        self.y = 500
 
-    def create(self, surface):
-        if currentScreen == bg7:
+    def sculpt(self, surface):
+        if currentScreen == bg3:
             surface.blit(self.image, (self.x, self.y))
         else:
             pass
 
-    def feel(self, player):
+    def sight(self, player):
         if abs((self.x - player.x)) < 15 and abs((self.y - player.y)) < 15:
             if currentScreen == bg3:
                 talk_to_rock()
@@ -487,12 +487,12 @@ def game_running ():
             farmer.contact(player)
             unicorn.create(gameDisplay)
             unicorn.feel(player)
+            rock.sculpt(gameDisplay)
+            rock.sight(player)
             mom.art(gameDisplay)
             mom.sense(player)
             fairy.scribble(gameDisplay)
             fairy.hit(player)
-            rock.create(gameDisplay)
-            rock.feel(player)
             player.update()
             pygame.display.update()
             gameDisplay.fill((0,0,0))
@@ -547,7 +547,7 @@ def gameStart ():
     message_to_screen("I get up out of my bed, get dressed and go to work. It feels like a normal ", white, -100, size = "okie")
     message_to_screen("day as I take the customers\' orders and make them their drinks, when ", white, -80, size = "okie")
     message_to_screen("all of a sudden I find myself on the ground and all I can see is darkness...", white, -60, size = "okie")
-    message_to_screen("Press enter to continue", white, 100, size = "small")
+    message_to_screen("Press ENTER to continue", white, 100, size = "small")
 
     while start:
         for event in pygame.event.get(): ### choice to exit the game
