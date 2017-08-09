@@ -491,6 +491,8 @@ def game_running ():
             mom.sense(player)
             fairy.scribble(gameDisplay)
             fairy.hit(player)
+            rock.create(gameDisplay)
+            rock.feel(player)
             player.update()
             pygame.display.update()
             gameDisplay.fill((0,0,0))
