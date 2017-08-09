@@ -332,7 +332,7 @@ class Farmer(object):
 class Unicorn(object):
     def __init__(self):
         self.image = pygame.image.load("unicorn.png")
-        self.x = 516
+        self.x = 470
         self.y = 147
 
     def create(self, surface):
@@ -352,7 +352,7 @@ class Rock(object):
     def __init__(self):
         self.image = pygame.image.load("rock.png")
         self.x = 518
-        self.y = 500
+        self.y = 320
 
     def sculpt(self, surface):
         if currentScreen == bg3:
@@ -668,7 +668,7 @@ def talk_to_cat ():
     talk_cat = True
     gameDisplay.fill(black)
     message_to_screen("The cat guides me out of the room, and I find myself in this dark, sad, ", white, -200, size = "okie")
-    message_to_screen("mysterious world filled my strange fantasy creatures. It looks like my worst ", white, -180, size = "okie")
+    message_to_screen("mysterious world filled with strange fantasy creatures. It looks like my worst ", white, -180, size = "okie")
     message_to_screen("nightmare. All of sudden, a butterfly zooms in front of me and steals my ", white, -160, size = "okie")
     message_to_screen("bracelet. 'Hey, that\'s mine! Give it back!' The butterfly turns into a ", white, -140, size = "okie")
     message_to_screen("fairy and tells me, 'Calm down, I\'ll give it back, you just need to do ", white, -120, size = "okie")
@@ -677,7 +677,7 @@ def talk_to_cat ():
     message_to_screen("and put them back together. I\'ll be back when you have completed the task.' ", white, -60, size = "okie")
     message_to_screen("She disappears, and I turn over to the cat with a bewildered look on my ", white, -40, size = "okie")
     message_to_screen("face. The cat, such a helpful creature, disappears, saying, 'It\'s my ", white, -20, size = "okie")
-    message_to_screen("nap time! They both leave me alone on this long, winding path", white, 0, size = "okie")
+    message_to_screen("nap time!' They both leave me alone on this long, winding path", white, 0, size = "okie")
 
     message_to_screen("Type A to go on the journey or S to ignore the cat", blue, 40, size = "okie1")
 
@@ -820,7 +820,7 @@ def talk_to_unicorn ():
 
                 elif event.key == pygame.K_RETURN:
                     global currentScreen
-                    currentScreen = bg8
+                    currentScreen = bg3
                     player.x = 50
                     player.y = 50
                     talk_unicorn = False
@@ -874,9 +874,9 @@ def talk_to_rock ():
     message_to_screen("Annoyed, I think of something to help the little rock and stop", white, -40, size = "okie")
     message_to_screen("their rudeness.", white, -20, size = "okie")
 
-    message_to_screen("Type A to use a hammer to break the big rocks", blue, -60, size = "okie1")
-    message_to_screen("Type S to play the flute", blue, -40, size = "okie1")
-    message_to_screen("Type D to read the book from the unicorn", blue, -20, size = "okie1")
+    message_to_screen("Type A to use a hammer to break the big rocks", blue, 20, size = "okie1")
+    message_to_screen("Type S to play the flute", blue, 40, size = "okie1")
+    message_to_screen("Type D to read the book from the unicorn", blue, 60, size = "okie1")
 
     while talk_rock:
         for event in pygame.event.get():
@@ -944,7 +944,7 @@ def talk_to_mom ():
     gameDisplay.fill(black)
     message_to_screen("'What are you doing?' My heart almost jumps out of my chest. It\'s Mom!", white, -200, size = "okie")
     message_to_screen("I turn around and face her and explain my whole situation, but she spats, ", white, -180, size = "okie")
-    message_to_screen("'Why did you leave my all alone in the house?' Fear creeps into my chest", white, -160, size = "okie")
+    message_to_screen("'Why did you leave me all alone in the house?' Fear creeps into my chest", white, -160, size = "okie")
     message_to_screen(" as she continues, 'Are you dumping your mom just like your useless dad?", white, -140, size = "okie")
     message_to_screen("Who do you think you are? You are nothing to me. You are nothing but a ", white, -120, size = "okie")
     message_to_screen("hinderance to me and that useless father of yours. However, I won\'t ", white, -100, size = "okie")
@@ -1045,7 +1045,7 @@ def talk_to_fairy ():
                     message_to_screen("what we did. We should\'ve been better parents.' I smile,", white, -60, size = "okie")
                     message_to_screen("realizing that the pieces of paper were hints to remind me", white, -40, size = "okie")
                     message_to_screen("that I don\'t need to prove to others that I\'m good enough", white, -20, size = "okie")
-                    message_to_screen("other than myself and forgiving others will lessen my shoulders. ", white, 0, size = "okie")
+                    message_to_screen("other than to myself and forgiving others will lessen my shoulders. ", white, 0, size = "okie")
 
                     message_to_screen("Press ENTER", red, 180, size = "small")
 
